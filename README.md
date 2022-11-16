@@ -54,6 +54,10 @@ This library require the permissions:
 
 ## Usage
 
+To make full use of the potential of the sdk, the ACCESS_FINE_LOCATION permission needs to be granted.
+
+[How to request permissions](https://developer.android.com/training/permissions/requesting)
+
 ```java
 import com.ironchip.ironchiplbfraudandroidsdk.LBFraudAndroid;
 ...
