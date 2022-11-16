@@ -65,7 +65,7 @@ import com.ironchip.ironchiplbfraudandroidsdk.LBFraudAndroid;
 // Replace APIKEY with the desired generated api key.
 LBFraudAndroid fraud = new LBFraudAndroid(this, "APIKEY");
 // In case you desire to target a diferent enviroment:
-// LBFraudAndroid fraud = new LBFraudAndroid(this, "APIKEY", host);
+// LBFraudAndroid fraud = new LBFraudAndroid(this, "APIKEY", "https://[ENVIROMENT].transaction.lbfraud.ironchip.com/transaction");
 
 String transactionID = "random_identifier_generated"; // Transaction identifier request for fraud results
 String userID = "john.doe@gmail.com"; // User identifier
@@ -75,6 +75,9 @@ extraData.put("concept", "Book august");
 extraData.put("amount", new Integer(30));
 extraData.put("operation", "booking");
 
+// TransactionID (required,unique): transaction identifier request for fraud results
+// UserID (required): User identifier
+// ExtraData (optional): extra information for analysis
 // The sendTransaction can be provided with 2 callbacks, one is executed when the transaction is finished
 // and the other one is called in case an error did occure during the transaction process.
 fraud.sendTransaction(transactionID, userID, extraData, () -> {
